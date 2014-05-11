@@ -36,6 +36,7 @@ $ yo bearcat
 ```
 
 you can choose to generate bearcat-app, bearcat-webapp, bearcat-library  
+![](http://bearcatnode.github.io/bearcat/images/yeoman_bearcat.png)
 
 ## License
 
