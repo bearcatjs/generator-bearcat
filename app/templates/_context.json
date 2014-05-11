@@ -1,0 +1,5 @@
+{
+	"name": "<%= _.slugify(appname) %>",<% if(doWebApp || doApp) { %>
+	"scan": "app",<%}%>
+	"beans": []
+}

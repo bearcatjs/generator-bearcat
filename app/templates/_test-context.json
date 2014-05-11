@@ -1,0 +1,4 @@
+{
+	"name": "<%= _.slugify(appname) %>",
+	"beans": []
+}

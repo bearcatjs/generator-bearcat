@@ -1,0 +1,33 @@
+{
+  "appenders": [{
+    "type": "console"
+  }, {
+    "type": "file",
+    "filename": "logs/bearcat.log",
+    "maxLogSize": 1048576,
+    "layout": {
+      "type": "basic"
+    },
+    "backups": 5,
+    "category": "bearcat"
+  }<% if(doWebApp) { %>
+  ,{
+    "type": "file",
+    "filename": "logs/bearcat-dao.log",
+    "maxLogSize": 1048576,
+    "layout": {
+      "type": "basic"
+    },
+    "backups": 5,
+    "category": "bearcat-dao"
+  } <% } %>
+  ],
+
+  "levels": {
+
+  },
+
+  "replaceConsole": false,
+
+  "lineDebug": true
+}
