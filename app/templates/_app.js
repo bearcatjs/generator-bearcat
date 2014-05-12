@@ -3,6 +3,7 @@ var serverConfig = require('./config/server');
 var express = require('express');
 var http = require('http');
 var app = express();
+var Route = require('./app/route');
 
 var rootdir = process.cwd();
 
@@ -40,6 +41,7 @@ var contextPath = require.resolve('./context.json');
 var bearcat = Bearcat.createApp([contextPath]);
 
 bearcat.start(function() {
+	Route(app);
 	http.createServer(app).listen(app.get('port'), app.get('host'), function() {
 		logger.info("server started on " + app.get('host') + ":" + app.get('port') + " on " + app.get('env') + " mode");
 	});
