@@ -81,6 +81,7 @@ var BearcatGenerator = yeoman.generators.Base.extend({
       this.mkdir('views');
       this.copy('route.js', 'app/route.js');
       this.copy('server.json', 'config/server.json');
+      this.copy('helloController.js', 'app/controller/helloController.js');
     }
 
     if(this.doLib) {
