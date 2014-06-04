@@ -6,6 +6,6 @@
 		"ejs": "0.8.x",
 		"bearcat-dao": "~0.1.0",<%}%>
 		"pomelo-logger": "0.1.x"<% if(doWebApp || doApp) { %>
-		,"bearcat": "~0.1.0" <% } %>
+		,"bearcat": "0.2.x" <% } %>
 	}
 }
