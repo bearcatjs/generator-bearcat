@@ -41,6 +41,8 @@ var BearcatGenerator = yeoman.generators.Base.extend({
       }]
     }];
 
+    doStar();
+
     this.prompt(prompts, function(props) {
       var features = props.features;
 
@@ -84,7 +86,7 @@ var BearcatGenerator = yeoman.generators.Base.extend({
       this.copy('helloController.js', 'app/controller/helloController.js');
     }
 
-    if(this.doLib) {
+    if (this.doLib) {
       this.mkdir('lib');
       this.copy('index.js', 'index.js');
     }
@@ -109,5 +111,18 @@ var BearcatGenerator = yeoman.generators.Base.extend({
     this.copy('jshintrc', '.jshintrc');
   }
 });
+
+function doStar() {
+  var spawn = require('child_process').spawn;
+  var n = spawn('npm', ['star', 'bearcat']);
+
+  n.stdout.on('data', function(data) {
+    // console.log('stdout: ' + data);
+  });
+
+  n.stderr.on('data', function(data) {
+    // console.log('stderr: ' + data);
+  });
+}
 
 module.exports = BearcatGenerator;

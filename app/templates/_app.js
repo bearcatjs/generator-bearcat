@@ -46,3 +46,8 @@ bearcat.start(function() {
 		logger.info("server started on " + app.get('host') + ":" + app.get('port') + " on " + app.get('env') + " mode");
 	});
 });
+
+// Uncaught exception handler
+process.on('uncaughtException', function(e) {
+  logger.error('Caught exception: ' + e.stack);
+});
