@@ -66,7 +66,7 @@ var BearcatGenerator = yeoman.generators.Base.extend({
       this.mkdir('config/dev');
       this.mkdir('logs');
       this.mkdir('resource');
-      this.template('_app.js', 'app.js');
+      this.template('_bearcat.app.js', 'app.js');
       this.template('_log4js.json', 'config/log4js.json');
     }
 
