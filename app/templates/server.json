@@ -1,6 +1,5 @@
 {
-	"host": "0.0.0.0",
-	"port": 8001,
+	"cookie_key": "_ntse_ns",
 	"cookie_secret": "bearcat_webapp",
-	"key": "bct.sid"
+	"session_key": "bct.sid"
 }

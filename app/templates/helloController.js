@@ -1,12 +1,9 @@
 var HelloController = function() {
-
+	this.$id = "helloController";
 }
 
-HelloController.prototype.index = function(req, res, next) {
+HelloController.prototype.index = function(req, res) {
 	res.send('hello world bearcat');
 }
 
-module.exports = {
-	id: "helloController",
-	func: HelloController
-}
+module.exports = HelloController;

@@ -67,11 +67,12 @@ var BearcatGenerator = yeoman.generators.Base.extend({
       this.mkdir('logs');
       this.mkdir('resource');
       this.template('_bearcat.app.js', 'app.js');
-      this.template('_log4js.json', 'config/log4js.json');
+      this.template('_log4js.json', 'config/dev/log4js.json');
     }
 
     if (this.doWebApp) {
       this.mkdir('app/controller');
+      this.mkdir('app/filter');
       this.mkdir('app/dao');
       this.mkdir('app/domain');
       this.mkdir('app/service');
@@ -83,7 +84,17 @@ var BearcatGenerator = yeoman.generators.Base.extend({
       this.mkdir('views');
       this.copy('route.js', 'app/route.js');
       this.copy('server.json', 'config/server.json');
+      this.copy('url.json', 'config/dev/url.json');
+      this.copy('utils.js', 'app/util/utils.js');
+      this.copy('consts.js', 'app/util/consts.js');
+      this.copy('fileUtil.js', 'app/util/fileUtil.js');
+      this.copy('dataPack.js', 'app/util/dataPack.js');
+      this.copy('signFilter.js', 'app/filter/signFilter.js');
+      this.copy('httpService.js', 'app/service/httpService.js');
+      this.copy('configService.js', 'app/service/configService.js');
+      this.copy('cookieService.js', 'app/service/cookieService.js');
       this.copy('helloController.js', 'app/controller/helloController.js');
+      this.copy('errorPageController.js', 'app/controller/errorPageController.js');
     }
 
     if (this.doLib) {

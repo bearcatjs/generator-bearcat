@@ -3,6 +3,7 @@
 	"version": "0.0.1",
 	"dependencies": { <% if(doWebApp) { %>
 		"express": "3.4.x", 
+		"connect-redis": "1.4.x",
 		"ejs": "0.8.x",
 		"bearcat-dao": "~0.1.0",<%}%>
 		"pomelo-logger": "0.1.x"<% if(doWebApp || doApp) { %>

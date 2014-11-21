@@ -5,7 +5,9 @@ var contextPath = require.resolve('./context.json');
 
 var bearcat = Bearcat.createApp([contextPath]);
 
-bearcat.start(function() {});
+bearcat.start(function() {
+	
+});
 
 // Uncaught exception handler
 process.on('uncaughtException', function(e) {

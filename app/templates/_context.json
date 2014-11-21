@@ -1,5 +1,8 @@
 {
-	"name": "<%= _.slugify(appname) %>",<% if(doWebApp || doApp) { %>
+	"name": "<%= _.slugify(appname) %>",
+	"dependencies": {
+		"bearcat-dao": "*"
+	},<% if(doWebApp || doApp) { %>
 	"scan": "app",<%}%>
-	"beans": []
+	"beans":[]
 }
