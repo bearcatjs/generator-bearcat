@@ -61,6 +61,7 @@ var BearcatGenerator = yeoman.generators.Base.extend({
   app: function() {
     if (this.doApp || this.doWebApp) {
       this.mkdir('app');
+      this.mkdir('coverage');
       this.mkdir('bin');
       this.mkdir('config');
       this.mkdir('config/dev');
@@ -82,6 +83,7 @@ var BearcatGenerator = yeoman.generators.Base.extend({
       this.mkdir('public/js');
       this.mkdir('public/images');
       this.mkdir('views');
+      this.copy('blanket.js', 'coverage/blanket.js');
       this.copy('route.js', 'app/route.js');
       this.copy('server.json', 'config/server.json');
       this.copy('url.json', 'config/dev/url.json');
