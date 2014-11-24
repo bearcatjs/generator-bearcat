@@ -1,8 +1,6 @@
-var logger = require('pomelo-logger').getLogger('nscheduler', 'HttpService');
-var bodyParser = require('body-parser');
+var logger = require('pomelo-logger').getLogger('<%= _.slugify(appname) %>', 'HttpService');
 var routes = require('../route');
 var express = require('express');
-var multer = require('multer');
 // var RedisStore = require('connect-redis')(express);
 var bearcat = require('bearcat');
 var http = require('http');
@@ -33,11 +31,9 @@ HttpService.prototype.init = function() {
 		app.set('view options', {
 			layout: false
 		});
-		app.use(bodyParser.json());
-		app.use(bodyParser.urlencoded({
-			extended: true
-		}));
-		app.use(multer);
+		app.use(express.json());
+		app.use(express.urlencoded());
+		app.use(express.multipart());
 		if (process.env.EXPRESS_LOGGER) {
 			app.use(express.logger());
 		}

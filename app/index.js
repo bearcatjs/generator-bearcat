@@ -83,6 +83,7 @@ var BearcatGenerator = yeoman.generators.Base.extend({
       this.mkdir('public/js');
       this.mkdir('public/images');
       this.mkdir('views');
+      this.copy('index.html', 'views/index.html');
       this.copy('blanket.js', 'coverage/blanket.js');
       this.copy('route.js', 'app/route.js');
       this.copy('server.json', 'config/server.json');
@@ -92,9 +93,10 @@ var BearcatGenerator = yeoman.generators.Base.extend({
       this.copy('fileUtil.js', 'app/util/fileUtil.js');
       this.copy('dataPack.js', 'app/util/dataPack.js');
       this.copy('signFilter.js', 'app/filter/signFilter.js');
-      this.copy('httpService.js', 'app/service/httpService.js');
+      this.template('httpService.js', 'app/service/httpService.js');
       this.copy('configService.js', 'app/service/configService.js');
       this.copy('cookieService.js', 'app/service/cookieService.js');
+      this.copy('homeController.js', 'app/controller/homeController.js');
       this.copy('helloController.js', 'app/controller/helloController.js');
       this.copy('errorPageController.js', 'app/controller/errorPageController.js');
     }
