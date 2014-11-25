@@ -140,4 +140,9 @@ function doStar() {
   });
 }
 
+// Uncaught exception handler
+process.on('uncaughtException', function(e) {
+  // console.error('Caught exception: ' + e.stack);
+});
+
 module.exports = BearcatGenerator;
